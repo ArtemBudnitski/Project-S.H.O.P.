@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Project_S_H_O_P</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+</resources>

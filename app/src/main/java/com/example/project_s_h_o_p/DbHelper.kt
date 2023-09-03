@@ -23,7 +23,6 @@ class DbHelper(val context: Context, val factory: SQLiteDatabase.CursorFactory?)
         values.put("login", user.login)
         values.put("password", user.password)
         values.put("email", user.email)
-        //id tworzy sie i +1 automatycznie
 
         val db = this.writableDatabase
         db.insert(
@@ -32,6 +31,13 @@ class DbHelper(val context: Context, val factory: SQLiteDatabase.CursorFactory?)
             values
         ) //dodajemy users do bazy danych, null bo nie chcemy dodawac pustych wartosci i values bo chcemy dodac wartosci z values
         db.close()
+
+    }
+
+    fun getUser(login: String, pass: String) : Boolean{
+        val db = this.readableDatabase
+        val result = db.rawQuery("SELECT * FROM users WHERE login = '$login' AND password = '$pass'", null)
+        return result.moveToFirst() //movetoFirst - przenosi do pierwszego wiersza i zwraca true jesli jest taki wiersz
 
     }
 }

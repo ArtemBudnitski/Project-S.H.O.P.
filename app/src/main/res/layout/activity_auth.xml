@@ -53,6 +53,7 @@
         android:backgroundTint="@color/black"
         android:text="@string/authorization"
         android:textColor="@color/white"
+        android:fontFamily="@font/inter_bold"
 
         />
 

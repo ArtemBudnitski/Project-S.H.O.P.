@@ -36,6 +36,9 @@ class AuthActivity : AppCompatActivity() {
                     Toast.makeText(this, "Done! Hello $logintext", Toast.LENGTH_SHORT).show()
                     login.text.clear()
                     password.text.clear()
+
+                    val intent = Intent(this, ItemsActivity::class.java)
+                    startActivity(intent)
                 } else {
                     Toast.makeText(this, "Ups! U can't Auth", Toast.LENGTH_SHORT).show()
                 }

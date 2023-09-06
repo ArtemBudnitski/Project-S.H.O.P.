@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Project_S_H_O_P"
         tools:targetApi="31">
         <activity
+            android:name=".ItemActivity"
+            android:exported="false" />
+        <activity
             android:name=".ItemsActivity"
             android:exported="false" />
         <activity
@@ -33,7 +36,6 @@
         <activity
             android:name=".AuthActivity"
             android:exported="true" />
-
 
         <meta-data
             android:name="preloaded_fonts"

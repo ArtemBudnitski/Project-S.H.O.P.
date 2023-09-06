@@ -1,11 +1,14 @@
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.project_s_h_o_p.Item
+import com.example.project_s_h_o_p.ItemActivity
 import com.example.project_s_h_o_p.R
 
 
@@ -18,7 +21,10 @@ class ItemsAdapter(var items: List<Item>, val context: Context) :
         val title: TextView = view.findViewById(R.id.item_list_title)
         val desc: TextView = view.findViewById(R.id.item_list_desc)
         val price: TextView = view.findViewById(R.id.item_list_price)
+        val bttn: Button = view.findViewById(R.id.item_list_button)
     }
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_in_list, parent, false)
@@ -36,6 +42,16 @@ class ItemsAdapter(var items: List<Item>, val context: Context) :
 
         var  imageId = context.resources.getIdentifier(items[position].image, "drawable", context.packageName)
         holder.image.setImageResource(imageId)
+
+        holder.bttn.setOnClickListener {
+            val intent = Intent(context, ItemActivity::class.java)
+            intent.putExtra("itemTitle", items[position].title)
+            intent.putExtra("itemDesc", items[position].desc)
+            intent.putExtra("itemPrice", items[position].price)
+            intent.putExtra("itemImage", items[position].image)
+
+            context.startActivity(intent)
+        }
 
     }
 }

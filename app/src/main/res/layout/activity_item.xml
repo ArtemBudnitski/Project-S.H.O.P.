@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white_700"
-    android:layout_marginBottom="20dp"
-    >
+    android:layout_height="match_parent"
+    tools:context=".ItemActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <ImageView
-        android:id="@+id/item_list_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="center"
+        android:id="@+id/item_image"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/goose"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
         />
 
     <TextView
-        android:id="@+id/item_list_title"
+        android:id="@+id/item_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -27,7 +30,7 @@
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/item_list_desc"
+        android:id="@+id/item_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -37,29 +40,18 @@
         android:paddingVertical="5dp"
         android:textSize="15sp"
         />
-
-    <TextView
-        android:id="@+id/item_list_price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@color/black"
-        android:fontFamily="@font/inter"
-        android:layout_marginHorizontal="16dp"
-        android:paddingVertical="5dp"
-        android:gravity="end"
-        android:textSize="15sp"/>
-
     <Button
-        android:id="@+id/item_list_button"
+        android:id="@+id/button_buy"
         android:layout_width="200dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:text="@string/view_item"
+        android:text="@string/buy"
         android:background="@color/dark_orange"
         android:textColor="@color/black"
         android:layout_marginBottom="20dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="5dp"
         />
+
+
 </LinearLayout>
